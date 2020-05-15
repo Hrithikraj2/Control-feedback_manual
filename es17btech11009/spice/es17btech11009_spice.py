@@ -16,6 +16,6 @@ plt.title('Output from Oscillator')
 #if using termux
 plt.savefig('./figs/es17btech11009/es17btech11009_spice.pdf')
 plt.savefig('./figs/es17btech11009/es17btech11009_spice.eps')
-subprocess.run(shlex.split("termux-open ./figs/ees17btech11009/es17btech11009_spice.pdf"))
+subprocess.run(shlex.split("termux-open ./figs/es17btech11009/es17btech11009_spice.pdf"))
 #else
 #plt.show()
