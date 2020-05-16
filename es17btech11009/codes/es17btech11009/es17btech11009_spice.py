@@ -6,7 +6,7 @@ import subprocess
 import shlex
 #end if
 
-data=np.loadtxt('Vout.dat')  
+data=np.loadtxt('es17btech11009.dat')  
 plt.plot(data[:,0],data[:,1])  
 plt.grid()
 plt.xlabel("time")

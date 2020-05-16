@@ -21,23 +21,67 @@ And the Equivalent circuit at the input of op-amp 2 is given in Fig \ref{fig:es1
 \caption{}
 \label{fig:es17btech11009_fig2}
 \end{figure}
-
 \item 
-\solution The Quadrature oscillator is based on the second integrator.
+\solution Find the open loop gain.
 
-As an active filter, the loop is damped to locate the poles in the left half of the s-plane. In the quadrature oscillator, the op amp 1 is connected as an inverting miller integrator with a limiter in the feedback for controlling the amplitude. The op amp 2 is connected as a non-inverting integrator.
-
-Draw the circuit without the limiter shown in Fig \ref{fig:es17btech11009_fig3}
+Consider the general open loop block diagram as shown in Fig \ref{fig:es17btech11009_block1}
 \renewcommand{\thefigure}{\theenumi.\arabic{figure}}
 \begin{figure}[!ht]
 	\begin{center}
-		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_fig3.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_block1.tex}}
+	\end{center}
+\caption{Open Loop Block diagram}
+\label{fig:es17btech11009_block1}
+\end{figure}
+\begin{align}
+    G = \frac{v_{o}}{v_i} 
+\end{align}
+\item
+Equivalent circuit diagram for Fig \ref{fig:es17btech11009_block1} is shown in \ref{fig:es17btech11009_block2}
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_block2.tex}}
+	\end{center}
+\caption{Equivalent Circuit for open loop block diagram}
+\label{fig:es17btech11009_block2}
+\end{figure}
+
+When we consider the circuit without the limiter and break the loop at X,
+The expression for open loop gain is 
+\begin{align}
+    G = \frac{v_{o_1}}{v_x} = -\frac{1}{sCR}
+    \label{eq:es17btech11009_G}
+\end{align}
+
+\item
+Consider the general block diagram for Feedback network in Fig \ref{fig:es17btech11009_b3}
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_block3.tex}}
 	\end{center}
 \caption{}
-\label{fig:es17btech11009_fig3}
+\label{fig:es17btech11009_b3}
 \end{figure}
+\begin{align}
+    H = \frac{V_{f}}{V_{o}}
+\end{align}
+\item 
+The equivalent Circuit is shown in Fig \ref{fig:es17btech11009_b4}
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_block4.tex}}
+	\end{center}
+\caption{}
+\label{fig:es17btech11009_b4}
+\end{figure}
+\begin{align}
+    H = \frac{v_{o_1}}{v_{o_2}}
+\end{align}
 \item
-Draw the equivalent control system representation for the circuit in Fig. \ref{fig:es17btech11009_fig3} which is given in \ref{fig:es17btech11009_block}
+Draw the equivalent control system representation for the circuit in Fig. \ref{fig:es17btech11009_b4} which is given in \ref{fig:es17btech11009_block}
 
 \renewcommand{\thefigure}{\theenumi.\arabic{figure}}
 \begin{figure}[!ht]
@@ -47,9 +91,23 @@ Draw the equivalent control system representation for the circuit in Fig. \ref{f
 \caption{Simplified equivalent block diagram}
 \label{fig:es17btech11009_block}
 \end{figure}
+\item 
+ The Quadrature oscillator is based on the second integrator.
+
+As an active filter, the loop is damped to locate the poles in the left half of the s-plane. In the quadrature oscillator, the op amp 1 is connected as an inverting miller integrator with a limiter in the feedback for controlling the amplitude. The op amp 2 is connected as a non-inverting integrator.
+
+Consider the part of the circuit with op-amp 2 shown in Fig \ref{fig:es17btech11009_fig3}
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_fig3.tex}}
+	\end{center}
+\caption{}
+\label{fig:es17btech11009_fig3}
+\end{figure}
 
 \item
-From \ref{fig:es17btech11009_fig3}.
+In \ref{fig:es17btech11009_fig3}.
 
 Use voltage division principle to write the expression of the fraction of its input voltage.
 \begin{align}
@@ -87,14 +145,6 @@ Simplifying further,
 \end{align}
 
 \item
-Find the open loop gain
-
-When we consider the circuit without the limiter and break the loop at X,
-The expression for open loop gain is 
-\begin{align}
-    G = \frac{v_{o_2}}{v_x} = -\frac{1}{sCR}
-    \label{eq:es17btech11009_G}
-\end{align}
 The transfer function of the equivalent positive feedback circuit in Fig. \ref{fig:es17btech11009_fig3} is  
 \begin{align}
 T &= \frac{G}{1-GH}
@@ -182,29 +232,16 @@ The loop will oscillate at frequency $\omega_{o}$, given by
 \end{align}
 From Table \ref{table:es17btech11009_Table1},
 \begin{align}
-    \omega_{o} = 1rad/s
+    \omega_{o} = 20 rad/s
 \end{align}
 \begin{align}
-    f = \frac{\omega_{o}}{2\pi} = 0.159 Hz
+    f = \frac{\omega_{o}}{2\pi} = 3.184 Hz
 \end{align}
 Substituting \eqref{eq:es17btech11009_G} and \eqref{eq:es17btech11009_H} in \eqref{eq:es17btech11009_TF},
 \begin{align}
     T = \frac{-SCR + \frac{\Delta}{2}}{s^2C^2R^2 - \frac{sCR\Delta}{2} + 1}
 \end{align}
-Taking values from Table \ref{table:es17btech11009_Table1},
-\begin{align}
-    T = \frac{-s + 0.05}{s^2 - 0.05s +1}
-\end{align}
-The following code plots the oscillating response of the system as given in Fig \ref{fig:es17btech11009_1_1}
-\begin{lstlisting}
-codes/es17btech11009/es17btech11009_1_1.py
-\end{lstlisting}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/es17btech11009/es17btech11009_1_1.eps}
-\caption{}
-\label{fig:es17btech11009_1_1}
-\end{figure}
+
 \item
 Simulate the circuit Fig \ref{fig:es17btech11009_fig3} using spice simulators and plot the generated output using python script.
 
@@ -222,16 +259,27 @@ codes/es17btech11009/es17btech11009_spice.py
 \caption{}
 \label{fig:es17btech11009_spice}
 \end{figure}
+\item
+Consider part of the spice simulation and the following code plots the part of the output as shown in Fig \ref{fig:es17btech11009_spice1}
+\begin{lstlisting}
+codes/es17btech11009/es17btech11009_spice1.py
+\end{lstlisting}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/es17btech11009/es17btech11009_spice1.eps}
+\caption{}
+\label{fig:es17btech11009_spice1}
+\end{figure}
 From the Fig \ref{fig:es17btech11009_spice},
 Time period of oscillation 
 \begin{align}
-    T = 6.28 s
+    T = 15.3738 - 15.0569
 \end{align}
 \begin{align}
-    f = \frac{1}{T} = 0.159
+    f = \frac{1}{T} = 3.155 Hz
 \end{align}
 \begin{align}
-    \omega_{o} = 2\pi f = 0.998
+    \omega_{o} = 2\pi f = 19.8 rad/s
 \end{align}
 Hence the frequency calculated from the formulae and the plot are approximately same.
 \end{enumerate}
