@@ -22,7 +22,20 @@ And the Equivalent circuit at the input of op-amp 2 is given in Fig \ref{fig:es1
 \label{fig:es17btech11009_fig2}
 \end{figure}
 \item 
-\solution Find the open loop gain.
+\solution The voltage $v_{o_1}$ and 2R are replaced with the Norton equivalent composed of a current source $\frac{v_{o_1}}{2R}$ and parallel resistance 2R. The direction of current in $R_{f}$ would be from output to input. Thus $R_{f}$ gives rise to a negative input resistance $-R_{f}$ as indicated in equivalent circuit given in Fig \ref{fig:es17btech11009_fig2}
+
+When we consider the circuit without the limiter and break the loop at X, The circuit looks as shown in Fig \ref{fig:es17btech11009_b4}
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_block4.tex}}
+	\end{center}
+\caption{}
+\label{fig:es17btech11009_b4}
+\end{figure}
+
+\item
+Find the open loop gain.
 
 Consider the general open loop block diagram as shown in Fig \ref{fig:es17btech11009_block1}
 \renewcommand{\thefigure}{\theenumi.\arabic{figure}}
@@ -34,7 +47,7 @@ Consider the general open loop block diagram as shown in Fig \ref{fig:es17btech1
 \label{fig:es17btech11009_block1}
 \end{figure}
 \begin{align}
-    G = \frac{v_{o}}{v_i} 
+    G = \frac{v_{o}}{v_{i}} 
 \end{align}
 \item
 Equivalent circuit diagram for Fig \ref{fig:es17btech11009_block1} is shown in \ref{fig:es17btech11009_block2}
@@ -47,7 +60,6 @@ Equivalent circuit diagram for Fig \ref{fig:es17btech11009_block1} is shown in \
 \label{fig:es17btech11009_block2}
 \end{figure}
 
-When we consider the circuit without the limiter and break the loop at X,
 The expression for open loop gain is 
 \begin{align}
     G = \frac{v_{o_1}}{v_x} = -\frac{1}{sCR}
@@ -65,18 +77,19 @@ Consider the general block diagram for Feedback network in Fig \ref{fig:es17btec
 \label{fig:es17btech11009_b3}
 \end{figure}
 \begin{align}
-    H = \frac{V_{f}}{V_{o}}
+    H = \frac{v_{f}}{v_{o}}
 \end{align}
 \item 
-The equivalent Circuit is shown in Fig \ref{fig:es17btech11009_b4}
+The equivalent Circuit is shown in Fig \ref{fig:es17btech11009_fig3}
 \renewcommand{\thefigure}{\theenumi.\arabic{figure}}
 \begin{figure}[!ht]
 	\begin{center}
-		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_block4.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_fig3.tex}}
 	\end{center}
 \caption{}
-\label{fig:es17btech11009_b4}
+\label{fig:es17btech11009_fig3}
 \end{figure}
+
 \begin{align}
     H = \frac{v_{o_2}}{v_{o_1}}
 \end{align}
@@ -95,16 +108,6 @@ Draw the equivalent control system representation for the circuit in Fig. \ref{f
  The Quadrature oscillator is based on the second integrator.
 
 As an active filter, the loop is damped to locate the poles in the left half of the s-plane. In the quadrature oscillator, the op amp 1 is connected as an inverting miller integrator with a limiter in the feedback for controlling the amplitude. The op amp 2 is connected as a non-inverting integrator.
-
-Consider the part of the circuit with op-amp 2 shown in Fig \ref{fig:es17btech11009_fig3}
-\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
-\begin{figure}[!ht]
-	\begin{center}
-		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_fig3.tex}}
-	\end{center}
-\caption{}
-\label{fig:es17btech11009_fig3}
-\end{figure}
 
 \item
 In \ref{fig:es17btech11009_fig3}.
