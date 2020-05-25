@@ -1,15 +1,17 @@
 Consider the quadrature-oscillator circuit given Fig. \ref{fig:es17btech11009_fig1} without the limiter. Let the resistance $R_{f}$ be equal to $\frac{2R}{1 + \Delta}$ where $\Delta << 1$. Show that the poles of the characteristic equation are in the right-half s plane and given by 
 s $\approx \frac{1}{CR}(\frac{\Delta}{4}\pm j)$
+
+\numberwithin{equation}{enumi}
 \begin{figure}[!ht]
-	\begin{center}
-		\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_fig1.tex}}
-	\end{center}
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{./figs/es17btech11009/es17btech11009_fig1.tex}}
+\end{center}
 \caption{}
 \label{fig:es17btech11009_fig1}
 \end{figure}
 %\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
+
 \begin{enumerate}[label=\arabic*.,ref=\theenumi]
-\numberwithin{equation}{enumi}
 \item Identify the the open loop gain and feedback  components of the circuit.
 \\
 \solution See Fig. \ref{fig:es17btech11009_b4}.
@@ -21,7 +23,6 @@ s $\approx \frac{1}{CR}(\frac{\Delta}{4}\pm j)$
 \caption{Circuit without the limiter}
 \label{fig:es17btech11009_b4}
 \end{figure}
-
 \numberwithin{figure}{enumi}
 \item Draw the block diagram and equivalent circuit for $H$.
 \renewcommand{\thefigure}{\theenumi.\arabic{figure}}
@@ -337,7 +338,7 @@ codes/es17btech11009/es17btech11009_spice1.py
 \caption{}
 \label{fig:es17btech11009_spice1}
 \end{figure}
-From the Fig \ref{fig:es17btech11009_spice},
+From the Fig \ref{fig:es17btech11009_spice1},
 Time period of oscillation 
 \begin{align}
     T = 15.3738 - 15.0569
