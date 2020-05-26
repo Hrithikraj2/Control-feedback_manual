@@ -283,10 +283,10 @@ The loop will oscillate at frequency $\omega_{o}$, given by
 \end{align}
 From Table \ref{table:es17btech11009_Table1},
 \begin{align}
-    \omega_{o} = 20 rad/s
+    \omega_{o} = 100 rad/s
 \end{align}
 \begin{align}
-    f = \frac{\omega_{o}}{2\pi} = 3.184 Hz
+    f = \frac{\omega_{o}}{2\pi} = 15.923 Hz
 \end{align}
 
 From \eqref{eq:es17btech11009_TF},
@@ -297,7 +297,7 @@ From Table \ref{table:es17btech11009_Table1},
 \begin{align}
     T = \frac{-0.05s + 0.05}{0.0025s^2 - 0.0025s +1}
 \end{align}
-The following code plots the oscillating response of the system as shown in \ref{fig:es17btech11009_1_1}
+The following code plots the step response of the system as shown in \ref{fig:es17btech11009_1_1}
 \begin{lstlisting}
 codes/es17btech11009/es17btech11009_1_1.py
 \end{lstlisting}
@@ -307,13 +307,24 @@ codes/es17btech11009/es17btech11009_1_1.py
 \caption{}
 \label{fig:es17btech11009_1_1}
 \end{figure}
+\item
+The following code plots the impulse response of the system as shown in \ref{fig:es17btech11009_imp}
+\begin{lstlisting}
+codes/es17btech11009/es17btech11009_imp.py
+\end{lstlisting}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/es17btech11009/es17btech11009_imp.eps}
+\caption{}
+\label{fig:es17btech11009_imp}
+\end{figure}
 
 \item
 Simulate the circuit Fig \ref{fig:es17btech11009_fig3} using spice simulators and plot the generated output using python script.
 
 Find the netlist for the simulated circuit here:
 \begin{lstlisting}
-spice/es17btech11009.net
+codes/es17btech11009/spice/es17btech11009.net
 \end{lstlisting}
 Python code used for generating the output:
 \begin{lstlisting}
@@ -339,13 +350,13 @@ codes/es17btech11009/es17btech11009_spice1.py
 From the Fig \ref{fig:es17btech11009_spice1},
 Time period of oscillation 
 \begin{align}
-    T = 15.3738 - 15.0569
+    T = 3.3801 - 3.317
 \end{align}
 \begin{align}
-    f = \frac{1}{T} = 3.155 Hz
+    f = \frac{1}{T} = 15.847 Hz
 \end{align}
 \begin{align}
-    \omega_{o} = 2\pi f = 19.8 rad/s
+    \omega_{o} = 2\pi f = 99.5 rad/s
 \end{align}
 Hence the frequency calculated from the formulae and the plot are approximately same.
 \end{enumerate}
